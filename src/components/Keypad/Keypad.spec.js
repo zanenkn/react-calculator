@@ -16,8 +16,8 @@ describe('Keypad', () => {
     )
   })
 
-  it('should render a <div />', () => {
-    expect(wrapper.find('div').length).toEqual(1)
+  it('should render two divs', () => {
+    expect(wrapper.find('div').length).toEqual(2)
   })
 
   it('renders the values of numbers', () => {
