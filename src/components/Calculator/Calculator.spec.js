@@ -11,7 +11,9 @@ describe('Calculator', () => {
     expect(wrapper.find('div').length).toEqual(1)
   })
 
-  it('should render the Display Component', () => {
-    expect(wrapper.containsMatchingElement(<Display />)).toEqual(true)
+  it('should render the Display component', () => {
+    expect(wrapper.containsMatchingElement(
+      <Display displayValue={wrapper.instance().state.displayValue} />
+    )).toEqual(true)
   })
 })
