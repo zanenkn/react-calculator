@@ -1,23 +1,51 @@
 :root {
+
   --main-font: 'Orbitron', sans-serif;
+
+  /* background colors */
   --calculator-background-color: #696969;
+  --display-background-color: #1d1f1f;
+
+  --action-key-color: #545454;
+  --action-key-color-hover: #2a2a2a;
+
+  --number-key-color: #696969;
+  --number-key-color-hover: #3f3f3f;
+
+  --submit-key-color: #d18800;
+  --submit-key-color-hover: #aa6e00;
+
+  /* dimentions */
   --calculator-height: 72%;
   --calculator-width: 36%;
-  --display-background-color: #1d1f1f;
-  --display-text-color: #23e000;
-  --display-text-size: 4em;
-  --display-text-weight: 400;
+
   --display-height: 24%;
   --display-width: 92%;
+
   --keypad-height: 72%;
   --keypad-width: 96%;
+
+  /* text colours */
+  --display-text-color: #23e000;
+  --key-text-color: #d3d3d3;
+
+  /* text sizes */
+  --display-text-size: 4em;
+  --key-text-size: 3em;
+
+  /* text weights */
+  --display-text-weight: 400;
+  --key-text-weight: 700'
 }
 
 @media screen and (max-width: 1024px) {
   :root {
     --calculator-height: 100%;
     --calculator-width: 100%;
+
+    /* text sizes */
     --display-text-size: 10em;
+    --key-text-size: 6em;
   }
 }
 
