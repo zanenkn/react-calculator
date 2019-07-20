@@ -1,5 +1,6 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import './Display.css'
 
 const Display = ({ displayValue }) => (
   <div className='display-container'>
