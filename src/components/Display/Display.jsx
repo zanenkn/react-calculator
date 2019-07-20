@@ -1,7 +1,13 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-const Display = ({ displayValue }) => <div className='display-container' />
+const Display = ({ displayValue }) => (
+  <div className='display-container'>
+    <p className='display-value'>
+      {displayValue}
+    </p>
+  </div>
+)
 
 Display.propTypes = { displayValue: propTypes.string.isRequired }
 
