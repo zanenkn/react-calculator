@@ -35,7 +35,7 @@
 
   /* text weights */
   --display-text-weight: 400;
-  --key-text-weight: 700'
+  --key-text-weight: 700;
 }
 
 @media screen and (max-width: 1024px) {
