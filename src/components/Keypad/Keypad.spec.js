@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import Keypad from './Keypad'
 
 describe('Keypad', () => {
@@ -16,8 +16,32 @@ describe('Keypad', () => {
     )
   })
 
-  it('should render three divs', () => {
-    expect(wrapper.find('div').length).toEqual(3)
+  it('should render four divs', () => {
+    expect(wrapper.find('div').length).toEqual(4)
+  })
+
+  it('should render an instance of the Key component for each number, operator and the submit key', () => {
+    const numbers = ['0', '1']
+    const operators = ['+', '-']
+    const submit = 1
+    const keyTotal = numbers.length + operators.length + submit
+    wrapper.setProps({ numbers, operators })
+    expect(wrapper.find('Key').length).toEqual(keyTotal)
+  })
+})
+
+describe('Mounted Keypad', () => {
+  let wrapper
+  beforeEach(() => {
+    wrapper = mount(
+      <Keypad 
+        callOperator={jest.fn()}
+        numbers={[]}
+        operators={[]}
+        setOperator={jest.fn()}
+        updateDisplay={jest.fn()}
+      />
+    )
   })
 
   it('renders the values of numbers', () => {
@@ -28,14 +52,5 @@ describe('Keypad', () => {
   it('renders the values of operators', () => {
     wrapper.setProps({operators: ['+', '-', '*', '/']})
     expect(wrapper.find('.operators-container').text()).toEqual('+-*/')
-  })
-
-  it('should render an instance of the Key component for each number, operator and the submit key', () => {
-    const numbers = ['0', '1']
-    const operators = ['+', '-']
-    const submit = 1
-    const keyTotal = numbers.length + operators.length + submit
-    wrapper.setProps({ numbers, operators })
-    expect(wrapper.find('Key').length).toEqual(keyTotal)
   })
 })
