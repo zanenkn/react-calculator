@@ -16,6 +16,8 @@ describe('Keypad', () => {
     )
   })
 
+  it('should render correctly', () => expect(wrapper).toMatchSnapshot())
+
   it('should render four divs', () => {
     expect(wrapper.find('div').length).toEqual(4)
   })
