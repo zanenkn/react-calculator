@@ -23,7 +23,7 @@ const Keypad = ({
   const operatorKeys = operators.map(operator => (
     <Key
       key={operator}
-      keyAction={updateDisplay}
+      keyAction={setOperator}
       keyType='operator-key'
       keyValue={operator} 
     />)
