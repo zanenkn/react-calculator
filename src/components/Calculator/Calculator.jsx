@@ -6,7 +6,7 @@ import Keypad from '../Keypad/Keypad'
 class Calculator extends Component {
   state = {
     displayValue: '0',
-    numbers: ['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', 'ce'],
+    numbers: ['9', '8', '7', '6', '5', '4', '3', '2', '1', '.', '0', 'ce'],
     operators: ['/', 'x', '-', '+' ],
     selectedOperator: '',
     storedValue: ''
@@ -16,8 +16,8 @@ class Calculator extends Component {
     let { displayValue, selectedOperator, storedValue } = this.state
     const result = displayValue
 
-    displayValue = parseInt(displayValue, 10)
-    storedValue = parseInt(storedValue, 10)
+    displayValue = parseFloat(displayValue, 10)
+    storedValue = parseFloat(storedValue, 10)
 
     switch (selectedOperator) {
       case '+':

@@ -141,16 +141,16 @@ describe('Function callOperator', () => {
   beforeEach(() => wrapper = shallow(<Calculator />))
 
   it('updates displayValue to the sum of storedValue and displayValue', () => {
-    wrapper.setState({ storedValue: '3' })
-    wrapper.setState({ displayValue: '2' })
+    wrapper.setState({ storedValue: '2.5' })
+    wrapper.setState({ displayValue: '3.5' })
     wrapper.setState({ selectedOperator: '+' })
     wrapper.instance().callOperator()
-    expect(wrapper.state('displayValue')).toEqual('5')
+    expect(wrapper.state('displayValue')).toEqual('6')
   })
 
   it('updates displayValue to the difference of storedValue and displayValue', () => {
-    wrapper.setState({ storedValue: '3' })
-    wrapper.setState({ displayValue: '2' })
+    wrapper.setState({ storedValue: '3.5' })
+    wrapper.setState({ displayValue: '2.5' })
     wrapper.setState({ selectedOperator: '-' })
     wrapper.instance().callOperator()
     expect(wrapper.state('displayValue')).toEqual('1')
@@ -158,18 +158,18 @@ describe('Function callOperator', () => {
 
   it('updates displayValue to the product of storedValue and displayValue', () => {
     wrapper.setState({ storedValue: '3' })
-    wrapper.setState({ displayValue: '2' })
+    wrapper.setState({ displayValue: '2.5' })
     wrapper.setState({ selectedOperator: 'x' })
     wrapper.instance().callOperator()
-    expect(wrapper.state('displayValue')).toEqual('6')
+    expect(wrapper.state('displayValue')).toEqual('7.5')
   })
 
   it('updates displayValue to the quotient of storedValue and displayValue', () => {
-    wrapper.setState({ storedValue: '3' })
-    wrapper.setState({ displayValue: '2' })
+    wrapper.setState({ storedValue: '7.5' })
+    wrapper.setState({ displayValue: '3' })
     wrapper.setState({ selectedOperator: '/' })
     wrapper.instance().callOperator()
-    expect(wrapper.state('displayValue')).toEqual('1.5')
+    expect(wrapper.state('displayValue')).toEqual('2.5')
   })
 
   it('updates displayValue to "0" if operation results in "NaN"', () => {
