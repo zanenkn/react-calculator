@@ -16,8 +16,18 @@ class Calculator extends Component {
     console.log('call operation')
   }
 
-  setOperator = () => {
-    console.log('set operation')
+  setOperator = (value) => {
+    let { displayValue, selectedOperator, storedValue } = this.state
+
+    if (selectedOperator === '') {
+      storedValue = displayValue
+      displayValue = '0'
+      selectedOperator = value
+    } else {
+      selectedOperator = value
+    }
+
+    this.setState({ displayValue, selectedOperator, storedValue })
   }
 
   updateDisplay = (value) => {
@@ -33,7 +43,7 @@ class Calculator extends Component {
       if(displayValue === '') {
         displayValue ='0'
       }
-      
+
     } else {
       displayValue === '0' ? displayValue = value : displayValue += value
     }
